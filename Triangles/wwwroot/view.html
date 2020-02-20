@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script language="javascript">
+        function Question1A() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("resultQuestion1A").innerHTML = this.responseText;
+                }
+            };
+            var a = document.getElementById('text_X').value;
+            var b = document.getElementById('text_Y').value;
+            xhttp.open("GET", "/api/TrianglesQuestion1A?row=" + a + "&col=" + b, true);
+            xhttp.send();
+        }
+
+        function Question1B() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("resultQuestion1B").innerHTML = this.responseText;
+                }
+            };
+            var a = document.getElementById('text_X1').value;
+            var b = document.getElementById('text_Y1').value;
+            var c = document.getElementById('text_X2').value;
+            var d = document.getElementById('text_Y2').value;
+            var e = document.getElementById('text_X3').value;
+            var f = document.getElementById('text_Y3').value;
+            xhttp.open("GET", "/api/TrianglesQuestion1B?c1x=" + a + "&c1y=" + b + "&c2x=" + c + "&c2y=" + d + "&c3x=" + e + "&c3y=" + f, true);
+            xhttp.send();
+        }
+
+        function TestQuestion1A() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("resultTestQuestion1A").innerHTML = this.responseText.split("\n").join("<br />");
+                }
+            };
+
+            xhttp.open("GET", "/api/TrianglesQuestion1ATests",true);
+            xhttp.send();
+        }
+
+        function TestQuestion1B() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("resultTestQuestion1B").innerHTML = this.responseText.split("\n").join("<br />");
+                }
+            };
+
+            xhttp.open("GET", "/api/TrianglesQuestion1BTests",true);
+            xhttp.send();
+        }
+
+    </script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <h2>Question 1A</h2>
+        <input type="text" id="text_X" />
+        <input type="text" id="text_Y" />
+        <button type="button" onclick="Question1A()">Test</button>
+        <br />
+        <br />
+        <div id="resultQuestion1A"></div>
+    </div>
+
+    <div>
+        <h2>TESTS Question 1A</h2>
+        <button type="button" onclick="TestQuestion1A()">Test</button>
+        <br />
+        <br />
+        <div id="resultTestQuestion1A"></div>
+    </div>
+
+    <h2>Question 1B </h2>
+    <input type="text" id="text_X1" />
+    <input type="text" id="text_Y1" />
+    <input type="text" id="text_X2" />
+    <input type="text" id="text_Y2" />
+    <input type="text" id="text_X3" />
+    <input type="text" id="text_Y3" />
+    <button type="button" onclick="Question1B()">Test</button>
+    <br />
+    <br />
+    <div id="resultQuestion1B"></div>
+       
+    <div>
+        <h2>TESTS Question 1B</h2>
+        <button type="button" onclick="TestQuestion1B()">Test</button>
+        <br />
+        <br />
+        <div id="resultTestQuestion1B"></div>
+    </div>
+
+</body>
+</html>
