@@ -1,4 +1,7 @@
-**Specifications : the coordinates are given in this order - clockwise starting from the right corner**
+**Specifications**
+----
+
+The coordinates are given in this order - clockwise starting from the right corner
 
     odd columns
           (c2x,c2y)
@@ -17,7 +20,12 @@
                  \| (c2x,c2y)
 
 
-front end /view.html
+**Front end** 
+----
+
+* **URL**
+
+   /view.html
 
 **Question 1A**
 ----
