@@ -59,6 +59,13 @@ namespace Triangles.Controllers
             else
                 displayResult += String.Format("Test with (0, 10) (10, 10) (0, 0) : Result = {0} : TEST NOK\n", result);
 
+            //Error 4
+            result = Triangles.Question1B("A", "10", "C", "10", "0", "0");
+            if (result == Triangles.ErrorInvalidInput)
+                displayResult += String.Format("Test with (A, 10) (C, 10) (0, 0) : Result = {0} : TEST OK\n", result);
+            else
+                displayResult += String.Format("Test with (A, 10) (C, 10) (0, 0) : Result = {0} : TEST NOK\n", result);
+
 
             return displayResult;
         }
